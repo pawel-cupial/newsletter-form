@@ -1,24 +1,40 @@
 "use client"
 
-import Button from '@/components/button'
-import EmailInput from '@/components/emailInput'
+import { useState } from "react"
 
 const Form = () => {
+    const [emailInputValue, setEmailInputValue] = useState('');
+    const [isValid, setIsValid] = useState(false);
+    const [isTouched, setIsTouched] = useState(false);
+    
+    const isInvalid = !isValid && isTouched
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const form = e.target;
-        const formData = new FormData(form);
-        console.log(formData)
-        const formJson = Object.fromEntries(formData.entries());
-        localStorage.setItem("email", formJson.email);
+    const changeHanlder = e => {
+        setEmailInputValue(e.target.value)
+    }
+    const submitHandler = (e) => {
+        e.preventDefault();
+        setIsTouched(true)
+
+        if(emailInputValue.trim() === '') {
+            setIsValid(false)
+            return
+        }
+
+        setIsValid(true)
+        console.log(emailInputValue);
+        setEmailInputValue('')
     }
 
     return (
-        <form method="post" onSubmit={handleSubmit}>
+        <form method="post" onSubmit={submitHandler}>
             <p>JO JE FORMULORZ</p>
-            <EmailInput />
-            <Button />
+            <label htmlFor="email">
+                Email address
+                <input type="text" placeholder="Enter your e-mail" id="email" value={emailInputValue} onChange={changeHanlder} />
+            </label>
+            <button type="submit">Jo je knefel</button>
+            {isInvalid && <p>Field cannot be empty</p>}
         </form>
     )
 }
