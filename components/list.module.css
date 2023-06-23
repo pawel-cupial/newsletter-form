@@ -1,0 +1,4 @@
+.list {list-style-type: none; margin-bottom: 40px}
+.list li {position: relative; padding-left: 35px}
+.list li:not(:last-child) {margin-bottom: 15px}
+.list li::before {content: url("../public/icon-list.svg"); position: absolute; left: 0; top: -2px; width: 21px; height: 21px}

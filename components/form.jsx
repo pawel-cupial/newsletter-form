@@ -2,6 +2,9 @@
 
 import { useState } from "react"
 import { useRouter } from 'next/navigation';
+import Image from "next/image";
+import List from "./list";
+import styles from './form.module.css'
 
 const Form = () => {
     const [emailInputValue, setEmailInputValue] = useState('');
@@ -25,33 +28,33 @@ const Form = () => {
         if(emailInputValue.trim() === '') {
             setIsValid(false);
             setErrorMsg('Field cannot be empty');
-            return
         }  else if(!emailRegex.test(email)) {
             setIsValid(false);
             setErrorMsg('Invalid e-mail format');
-            return
         } else {
             router.push('/success');
         }
     }
 
     return (
-        <form method="post" onSubmit={submitHandler}>
-            <div>
-                <p>Stay updated!</p>
-                <p>Join 60,000+ product managers reciving monthly updates on:</p>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+        <form method="post" onSubmit={submitHandler} className={styles.form}>
+            <div className={styles.text}>
+                <p className={styles.heading}>Stay updated!</p>
+                <p className={styles.subHeading}>Join 60,000+ product managers reciving monthly updates on:</p>
+                <List/>
                 <label htmlFor="email">
                     Email address
-                    <input type="text" placeholder="email@company.com" id="email" value={emailInputValue} onChange={changeHanlder} />
                 </label>
+                <input type="text" placeholder="email@company.com" id="email" value={emailInputValue} onChange={changeHanlder} />                
                 <button type="submit">Subscribe to monthly newsletter</button>
                 {dataIsInvalid && <p>{errorMsg}</p>}
             </div>
+            <Image
+                src="/illustration-sign-up-desktop.svg"
+                width={400}
+                height={593}
+                alt="Charts and screens on colorfull background"
+            />
         </form>
     )
 }

@@ -1,0 +1,6 @@
+.form {display: flex; justify-content: space-between; max-width: 928px; width: 100%; background-color: #fff; border-radius: 25px; padding: 20px}
+.form .text {display: flex; flex-direction: column; justify-content: center; color: var(--dark-slate-grey); padding: 0 80px 0 40px}
+.form .heading {font-size: 3rem; font-weight: 700; margin-bottom: 25px}
+.form .subHeading {margin-bottom: 25px}
+.form label {font-size: 0.75rem; font-weight: 700; margin-bottom: 10px}
+.form input {height: 54px; border-radius: 10px; border: 1px solid var(--grey); margin-bottom: 25px; padding-left: 23px}
