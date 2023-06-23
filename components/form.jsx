@@ -3,7 +3,10 @@
 import { useState } from "react"
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
+
 import List from "./list";
+import Button from "./button";
+
 import styles from './form.module.css'
 
 const Form = () => {
@@ -46,7 +49,7 @@ const Form = () => {
                     Email address
                 </label>
                 <input type="text" placeholder="email@company.com" id="email" value={emailInputValue} onChange={changeHanlder} />                
-                <button type="submit">Subscribe to monthly newsletter</button>
+                <Button/>
                 {dataIsInvalid && <p>{errorMsg}</p>}
             </div>
             <Image

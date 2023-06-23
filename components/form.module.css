@@ -3,4 +3,8 @@
 .form .heading {font-size: 3rem; font-weight: 700; margin-bottom: 25px}
 .form .subHeading {margin-bottom: 25px}
 .form label {font-size: 0.75rem; font-weight: 700; margin-bottom: 10px}
-.form input {height: 54px; border-radius: 10px; border: 1px solid var(--grey); margin-bottom: 25px; padding-left: 23px}
+.form input {height: 54px; border-radius: 10px; border: 1px solid var(--grey); margin-bottom: 25px; padding-left: 23px; transition: border .2s}
+.form input::placeholder {transition: color .2s}
+
+.form input:focus {outline: none; border: 1px solid var(--dark-slate-grey)}
+.form input:focus::placeholder {color: var(--dark-slate-grey)}
