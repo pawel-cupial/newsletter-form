@@ -45,19 +45,29 @@ const Form = () => {
                 <p className={styles.heading}>Stay updated!</p>
                 <p className={styles.subHeading}>Join 60,000+ product managers reciving monthly updates on:</p>
                 <List/>
-                <label htmlFor="email">
-                    Email address
-                </label>
-                <input type="text" placeholder="email@company.com" id="email" value={emailInputValue} onChange={changeHanlder} />                
+                <div className={styles.labelBox}>
+                    <label htmlFor="email">
+                        Email address
+                        {dataIsInvalid && <p className={styles.errorMsg}>{errorMsg}</p>}
+                    </label>
+                </div>
+                <input 
+                    type="text"
+                    placeholder="email@company.com"
+                    className={dataIsInvalid ? styles.isInvalid : ''}
+                    id="email"
+                    value={emailInputValue}
+                    onChange={changeHanlder} />                
                 <Button/>
-                {dataIsInvalid && <p>{errorMsg}</p>}
             </div>
-            <Image
-                src="/illustration-sign-up-desktop.svg"
-                width={400}
-                height={593}
-                alt="Charts and screens on colorfull background"
-            />
+            <div className={styles.imageBox}>
+                <Image
+                    src="/illustration-sign-up-desktop.svg"
+                    width={400}
+                    height={593}
+                    alt="Charts and screens on colorfull background"
+                />
+            </div>
         </form>
     )
 }
