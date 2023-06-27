@@ -21,6 +21,7 @@ const Form = () => {
 
     const changeHanlder = e => {
         setEmailInputValue(e.target.value);
+        setIsValid(true);
     }
     const submitHandler = (e) => {
         const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
@@ -48,7 +49,7 @@ const Form = () => {
                 <div className={styles.labelBox}>
                     <label htmlFor="email">
                         Email address
-                        {dataIsInvalid && <p className={styles.errorMsg}>{errorMsg}</p>}
+                        <p className={`${styles.errorMsg} ${dataIsInvalid ? styles.isInvalid : ''}`}>{errorMsg}</p>
                     </label>
                 </div>
                 <input 
