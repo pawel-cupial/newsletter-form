@@ -1,14 +1,15 @@
-.form {
-    display: flex; justify-content: space-between; max-width: 928px; width: 100%; background-color: #fff; border-radius: 25px; padding: 20px
+.form {background-color: var(--charcoal-grey); display: flex; justify-content: center; align-items: center; font-size: 16px; height: 100%; min-height: 100vh; padding: 40px 20px}
+.form form {
+    display: flex; justify-content: space-between; max-width: 928px; width: 100%; height: 640px; background-color: #fff; border-radius: 35px; padding: 20px
 }
 .form .text {display: flex; flex-direction: column; justify-content: center; color: var(--dark-slate-grey); padding: 0 80px 0 40px}
-.form .heading {font-size: 3rem; font-weight: 700; margin-bottom: 25px}
-.form .subHeading {margin-bottom: 25px}
-.form label {display: flex; justify-content: space-between}
-.form label {font-size: 0.75rem; font-weight: 700; margin-bottom: 10px}
+.form .heading {font-size: 3.5rem; font-weight: 700; margin-bottom: 25px}
+.form .subHeading {line-height: 1.5; margin-bottom: 25px}
+.form label {display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; margin-bottom: 10px}
 .form input {height: 54px; border-radius: 10px; border: 1px solid var(--grey); margin-bottom: 25px; padding-left: 23px; transition: border .2s, background-color .2s}
-.form .imageBox {display: flex; align-items: center; justify-content: center}
+.form .imageBox {width: 460px; display: flex; align-items: center; justify-content: center}
 .form .imageBox img {width: 100%; height: 100%; object-fit: contain}
+.form .mobileImage {display: none}
 .form .errorMsg {color: #e78987; opacity: 0; transition: opacity .2s}
 
 /* modifiers */
@@ -21,11 +22,28 @@
 .form input:focus {outline: none; border: 1px solid var(--dark-slate-grey)}
 .form input:focus::placeholder {color: var(--dark-slate-grey)}
 
-/* rwd */
+/* RWD */
 @media screen and (max-width: 1279px) {
     .form .text {padding: 0 40px}
+    .form .heading {font-size: 2.5rem}
 }
 
 @media screen and (max-width: 1023px) {
     .form .text {padding: 0 20px}
+}
+
+@media screen and (max-width: 767px) {
+    .form .imageBox {border-radius: 15px; overflow: hidden; width: auto}
+    .form .imageBox img {object-fit: cover; object-position: right}
+}
+
+@media screen and (max-width: 639px) {
+    .form {padding: 20px}
+    .form form {flex-direction: column; justify-content: flex-start; max-width: 375px; height: auto; border-radius: 0; padding: 0 0 40px 0}
+    .form .imageBox {display: none}
+    .form .mobileImage {display: block; width: 100%; margin-bottom: 40px; object-fit: cover}
+}
+
+@media screen and (max-width: 349px) {
+    .form {padding: 0}
 }

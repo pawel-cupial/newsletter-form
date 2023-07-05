@@ -41,35 +41,44 @@ const Form = () => {
     }
 
     return (
-        <form method="post" onSubmit={submitHandler} className={styles.form}>
-            <div className={styles.text}>
-                <p className={styles.heading}>Stay updated!</p>
-                <p className={styles.subHeading}>Join 60,000+ product managers reciving monthly updates on:</p>
-                <List/>
-                <div className={styles.labelBox}>
-                    <label htmlFor="email">
-                        Email address
-                        <p className={`${styles.errorMsg} ${dataIsInvalid ? styles.isInvalid : ''}`}>{errorMsg}</p>
-                    </label>
-                </div>
-                <input 
-                    type="text"
-                    placeholder="email@company.com"
-                    className={dataIsInvalid ? styles.isInvalid : ''}
-                    id="email"
-                    value={emailInputValue}
-                    onChange={changeHanlder} />                
-                <Button/>
-            </div>
-            <div className={styles.imageBox}>
+        <div className={styles.form}>
+            <form method="post" onSubmit={submitHandler}>
                 <Image
-                    src="/illustration-sign-up-desktop.svg"
-                    width={400}
-                    height={593}
+                    className={styles.mobileImage}
+                    src="/illustration-sign-up-mobile.svg"
+                    width={375}
+                    height={284}
                     alt="Charts and screens on colorfull background"
                 />
-            </div>
-        </form>
+                <div className={styles.text}>
+                    <p className={styles.heading}>Stay updated!</p>
+                    <p className={styles.subHeading}>Join 60,000+ product managers reciving monthly updates on:</p>
+                    <List/>
+                    <div className={styles.labelBox}>
+                        <label htmlFor="email">
+                            Email address
+                            <p className={`${styles.errorMsg} ${dataIsInvalid ? styles.isInvalid : ''}`}>{errorMsg}</p>
+                        </label>
+                    </div>
+                    <input 
+                        type="text"
+                        placeholder="email@company.com"
+                        className={dataIsInvalid ? styles.isInvalid : ''}
+                        id="email"
+                        value={emailInputValue}
+                        onChange={changeHanlder} />                
+                    <Button/>
+                </div>
+                <div className={styles.imageBox}>
+                    <Image
+                        src="/illustration-sign-up-desktop.svg"
+                        width={400}
+                        height={593}
+                        alt="Charts and screens on colorfull background"
+                    />
+                </div>
+            </form>
+        </div>
     )
 }
 
