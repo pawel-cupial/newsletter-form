@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Image from "next/image";
 
 import List from "./list";
-import Button from "./button";
+import SubmitButton from "./submitButton";
 
 import styles from './form.module.css'
 
@@ -67,7 +67,7 @@ const Form = () => {
                         id="email"
                         value={emailInputValue}
                         onChange={changeHanlder} />                
-                    <Button/>
+                    <SubmitButton text="Subscribe to monthly newsletter"/>
                 </div>
                 <div className={styles.imageBox}>
                     <Image

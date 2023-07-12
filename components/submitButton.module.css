@@ -1,0 +1,12 @@
+.button {background-color: var(--dark-slate-grey); color: #fff; border-radius: 10px; height: 54px; border: none; font-weight: 700; cursor: pointer}
+.button,
+.button span {position: relative}
+
+/* pseudoelements */
+.button::before {
+    content: ''; display: block; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,82,122,1) 0%, rgba(255,98,87,1) 97%); border-radius: 10px;
+    opacity: 0; transition: opacity .2s
+}
+
+/* hovers */
+.button:hover::before {opacity: 1}

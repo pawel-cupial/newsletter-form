@@ -1,19 +1,14 @@
 'use client'
 import { useRouter } from 'next/navigation';
 
-import styles from '../../components/button.module.css'
+import BackToHomeButton from '@/components/backToHomeButton';
 
-const Success = () => {
-    const router = useRouter();
-    const clickHandler = () => {
-        router.push('/');
-    }
-    
+const Success = () => {    
     return (
         <div>
             <p>Thanks for subscribing!</p>
             <p>A confirmation email has been sent to EMAIL. Please open in and click the button inside to confirm your subscription</p>
-            <button type="button" className={styles.button} onClick={clickHandler}><span>Dismiss message</span></button>
+            <BackToHomeButton text="Dismiss message"/>
         </div>
     )
 }
