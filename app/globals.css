@@ -12,4 +12,11 @@
     margin: 0
 }
 
-body {background-color: var(--charcoal-grey); display: flex; justify-content: center; align-items: center; font-size: 16px; height: 100%; min-height: 100vh; padding: 40px 20px}
+body {
+    background-color: var(--charcoal-grey); display: flex; justify-content: center; align-items: center; font-size: 16px; height: 100%; min-height: 100vh; padding: 40px 20px
+}
+
+ /* RWD */
+ @media screen and (max-width: 375px) {
+    body {padding: 0}
+ } 

@@ -42,13 +42,15 @@ const Form = () => {
 
     return (
         <form method="post" onSubmit={submitHandler} className={styles.form}>
-            <Image
-                className={styles.mobileImage}
-                src="/illustration-sign-up-mobile.svg"
-                width={375}
-                height={284}
-                alt="Charts and screens on colorfull background"
-            />
+            <div className={styles.mobileImageBox}>
+                <Image
+                    className={styles.mobileImage}
+                    src="/illustration-sign-up-mobile.svg"
+                    width={375}
+                    height={284}
+                    alt="Charts and screens on colorfull background"
+                />
+            </div>
             <div className={styles.text}>
                 <p className={styles.heading}>Stay updated!</p>
                 <p className={styles.subHeading}>Join 60,000+ product managers reciving monthly updates on:</p>

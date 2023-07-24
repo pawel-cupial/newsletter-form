@@ -1,0 +1,18 @@
+.successBox {background-color: #fff; border-radius: 35px; max-width: 500px; padding: 50px 60px}
+.successBox img {margin-bottom: 40px}
+.successBox .heading {font-size: 56px; font-weight: 700; line-height: 1; margin-bottom: 25px}
+.successBox .text {font-size: 16px; line-height: 1.5; margin-bottom: 40px}
+.successBox .heading,
+.successBox .text {color: var(--dark-slate-grey)}
+
+/* RWD */
+@media screen and (max-width: 500px) {
+    .successBox {width: 100%}
+    .successBox .heading {font-size: 40px}
+}
+@media screen and (max-width: 375px) {
+    .successBox {
+        display: flex; flex-direction: column; justify-content: space-between; height: 100vh; border-radius: 0; padding: 140px 20px 40px
+    }
+    .successBox .heading {font-size: 36px}
+}
