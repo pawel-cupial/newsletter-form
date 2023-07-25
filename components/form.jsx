@@ -1,21 +1,17 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter } from 'next/navigation';
 import Image from "next/image";
-
 import List from "./list";
 import SubmitButton from "./submitButton";
 
 import styles from './form.module.css'
 
-const Form = () => {
+const Form = ( {setMail, setIsSubmited} ) => {
     const [emailInputValue, setEmailInputValue] = useState('');
     const [isValid, setIsValid] = useState();
     const [errorMsg, setErrorMsg] = useState('');
     const [isTouched, setIsTouched] = useState(false);
-    
-    const router = useRouter();
 
     const dataIsInvalid = !isValid && isTouched;
 
@@ -36,7 +32,8 @@ const Form = () => {
             setIsValid(false);
             setErrorMsg('Invalid e-mail format');
         } else {
-            router.push('/success');
+            setMail(email)
+            setIsSubmited(true)
         }
     }
 
