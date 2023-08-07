@@ -14,7 +14,7 @@ const SuccessBox = (props) => {
                 <p className={styles.heading}>Thanks for subscribing!</p>
                 <p className={styles.text}>A confirmation email has been sent to <b>{props.mail}</b>. Please open in and click the button inside to confirm your subscription</p>
             </div>
-            <BackToHomeButton text="Dismiss message"/>            
+            <BackToHomeButton text="Dismiss message" setIsSubmited={props.setIsSubmited} />            
         </div>
     )
 }
