@@ -50,12 +50,12 @@ const Form = ( {setMail, setIsSubmited} ) => {
             </div>
             <div className={styles.text}>
                 <p className={styles.heading}>Stay updated!</p>
-                <p className={styles.subHeading}>Join 60,000+ product managers reciving monthly updates on:</p>
+                <h1 className={styles.subHeading}>Join 60,000+ product managers reciving monthly updates on:</h1>
                 <List/>
                 <div className={styles.labelBox}>
                     <label htmlFor="email">
                         Email address
-                        <p className={`${styles.errorMsg} ${dataIsInvalid ? styles.isInvalid : ''}`}>{errorMsg}</p>
+                        <span className={`${styles.errorMsg} ${dataIsInvalid ? styles.isInvalid : ''}`}>{errorMsg}</span>
                     </label>
                 </div>
                 <input 
